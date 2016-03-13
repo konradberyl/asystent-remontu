@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AsystentRemontu</string>
+    <string name="title_activity_cennik_uslug">cennikUslug</string>
+    <string name="title_activity_kalkulator">kalkulator</string>
+</resources>
