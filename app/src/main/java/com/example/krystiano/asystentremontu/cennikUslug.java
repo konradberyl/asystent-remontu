@@ -1,5 +1,6 @@
 package com.example.krystiano.asystentremontu;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,7 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ListView;
 
-public class cennikUslug extends AppCompatActivity {
+public class cennikUslug extends Activity {
     private ListView listView1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
