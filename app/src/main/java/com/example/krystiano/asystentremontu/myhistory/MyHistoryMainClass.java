@@ -1,15 +1,12 @@
 package com.example.krystiano.asystentremontu.myhistory;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.krystiano.asystentremontu.AssistantUserConfig;
+import com.example.krystiano.asystentremontu.database.AssistantUserConfig;
 import com.example.krystiano.asystentremontu.R;
-import com.example.krystiano.asystentremontu.database.DbManager;
-import com.example.krystiano.asystentremontu.database.MyHistoryDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,12 +16,11 @@ import java.util.List;
  * on 19.03.2016
  * All rights reserved
  */
-public class MyHistoryMainClass extends Activity {
+public class MyHistoryMainClass extends CommunicationWithDatabase {
     private TextView actualHistoryTextview, newElementTextview,textToShow;
     private EditText textToWriteSmthng;
     private AssistantUserConfig actualConfig;
-    private ArrayList<AssistantUserConfig> configList = new ArrayList<AssistantUserConfig>();
-    private List<MyHistoryDatabase> configListFromDb ;
+    private ArrayList<AssistantUserConfig> configList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +31,9 @@ public class MyHistoryMainClass extends Activity {
         textToWriteSmthng = (EditText) findViewById(R.id.text_to_writesomething);
         textToShow=(TextView)findViewById(R.id.text_to_show);
         getItemFromDb();
+        if(!configList.isEmpty()){
+            textToShow.setText(configList.get(configList.size()-1).comment);
+        }
 
         actualHistoryTextview.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,20 +54,9 @@ public class MyHistoryMainClass extends Activity {
 
     }
 
-    private void createItemToDb(List<AssistantUserConfig> cfgs) {
-        DbManager.clearAssistantDatabase();
-        DbManager.saveAssistantConfig(DbManager.createAssistantConfig(cfgs));
+    @Override
+    protected List<AssistantUserConfig> getAssistantUserConfig() {
+        return configList;
     }
 
-    private void getItemFromDb() {
-        configListFromDb = DbManager.getAssistantConfig();
-        if (!configListFromDb.isEmpty()) {
-            for (MyHistoryDatabase myHistoryDatabase : configListFromDb) {
-                AssistantUserConfig assistantUserConfig = new AssistantUserConfig(myHistoryDatabase.comment, myHistoryDatabase.pathToImg, myHistoryDatabase.date, myHistoryDatabase.price);
-                configList.add(assistantUserConfig);
-            }
-            textToShow.setText(configList.get(0).comment);
-
-        }
-    }
 }
