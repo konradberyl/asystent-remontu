@@ -1,5 +1,6 @@
 package com.example.krystiano.asystentremontu.myhistory;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -10,6 +11,9 @@ import android.widget.Toast;
 
 import com.example.krystiano.asystentremontu.database.AssistantUserConfig;
 import com.example.krystiano.asystentremontu.R;
+import com.example.krystiano.asystentremontu.database.DbManager;
+import com.example.krystiano.asystentremontu.myhistory.actual_history.ActualHistoryFragment;
+import com.example.krystiano.asystentremontu.myhistory.actual_history.AdapterForRecyclerView;
 import com.example.krystiano.asystentremontu.myhistory.newelement.CommunicationWithDatabase;
 import com.example.krystiano.asystentremontu.myhistory.newelement.NewElementFragment;
 import com.example.krystiano.asystentremontu.myhistory.newelement.OnNewElementAdded;
@@ -36,38 +40,46 @@ public class MyHistoryMainClass extends CommunicationWithDatabase {
         actualHistoryTextview = (TextView) findViewById(R.id.actual_history_textview);
         newElementTextview = (TextView) findViewById(R.id.new_element_textview);
         fragmentContainer = (FrameLayout) findViewById(R.id.fragment_container);
-        fragmentContainer.setVisibility(View.GONE);
         views.add(actualHistoryTextview);
         views.add(newElementTextview);
         views.add(fragmentContainer);
-        //getItemFromDb();
+        getItemFromDb();
+
+
 
         actualHistoryTextview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ActualHistoryFragment actualHistoryFragment = new ActualHistoryFragment();
+                actualHistoryFragment.setFragmentConfig(configList);
+                if(!configList.isEmpty()){
+
+                    placeFragmentInContainer(actualHistoryFragment);
+                    hideAllViewsWithout(fragmentContainer);
+                }
+                else{
+                    Toast.makeText(getApplicationContext(),"dodaj najpierw nowy element!",Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
         newElementTextview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                hideAllViewsWithout(fragmentContainer);
                 NewElementFragment newElementFragment = new NewElementFragment();
                 newElementFragment.setCallbacks(new OnNewElementAdded() {
                     @Override
                     public void onAdded(AssistantUserConfig newCfg) {
                         configList.add(newCfg);
+                            createItemToDb(configList);
                         onBackPressed();
-                        Toast.makeText(getApplicationContext(), "dodano cene: " + configList.get(configList.indexOf(newCfg)).price, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "dodano nowy element", Toast.LENGTH_SHORT).show();
 
                     }
                 });
                 placeFragmentInContainer(newElementFragment);
+                hideAllViewsWithout(fragmentContainer);
 
-//                String text = textToWriteSmthng.getText().toString();
-//                textToShow.setText(text);
-//                actualConfig = new AssistantUserConfig(text, "sciezka", "data aktualna", "cenahehe");
-//                configList.add(actualConfig);
-//                createItemToDb(configList);
             }
         });
 

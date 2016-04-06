@@ -1,6 +1,7 @@
 package com.example.krystiano.asystentremontu.myhistory.newelement;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 import com.example.krystiano.asystentremontu.database.AssistantUserConfig;
 import com.example.krystiano.asystentremontu.database.DbManager;
 import com.example.krystiano.asystentremontu.database.MyHistoryDatabase;
+import com.example.krystiano.asystentremontu.myhistory.actual_history.AdapterForRecyclerView;
 
 import java.util.List;
 
@@ -38,6 +40,7 @@ public abstract class CommunicationWithDatabase extends FragmentActivity {
                 AssistantUserConfig assistantUserConfig = new AssistantUserConfig(myHistoryDatabase.comment, myHistoryDatabase.pathToImg, myHistoryDatabase.date, myHistoryDatabase.price);
                 getAssistantUserConfig().add(assistantUserConfig);
             }
+
 
         }
     }
