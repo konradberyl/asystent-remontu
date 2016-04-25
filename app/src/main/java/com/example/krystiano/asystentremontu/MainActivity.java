@@ -18,7 +18,6 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         myHistoryButton=(Button)findViewById(R.id.my_history_button);
-        FlowManager.init(this);
 
         myHistoryButton.setOnClickListener(new View.OnClickListener() {
             @Override

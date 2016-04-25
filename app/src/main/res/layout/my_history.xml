@@ -5,27 +5,31 @@
     android:background="@drawable/remont"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/actual_history_textview"
+    <Button
+        android:id="@+id/actual_history_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerInParent="true"
-        android:layout_marginTop="20dp"
-        android:text="dotychczasowa historia"
+        android:text="aktualna historia"
         android:textColor="@color/text_color"
+        android:textSize="25dp"
+        android:background="@drawable/button_appearance_2"
+         />
 
-        android:textSize="30dp" />
-
-    <TextView
-        android:id="@+id/new_element_textview"
+    <Button
+        android:id="@+id/new_element_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/actual_history_textview"
+        android:layout_below="@+id/actual_history_button"
         android:layout_centerHorizontal="true"
         android:text="nowy element"
+        android:layout_alignLeft="@+id/actual_history_button"
+        android:layout_alignRight="@+id/actual_history_button"
         android:textColor="@color/text_color"
-        android:textSize="30dp" />
+        android:background="@drawable/button_appearance_1"
+        android:layout_marginTop="5dp"
+        android:textSize="25dp" />
 
     <TextView
         android:id="@+id/text_to_show"

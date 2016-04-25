@@ -25,7 +25,10 @@
         android:layout_alignLeft="@+id/distribuction_of_costs_button"
         android:layout_alignRight="@+id/distribuction_of_costs_button"
         android:text="moja historia"
+        android:background="@drawable/button_appearance_1"
         android:layout_centerVertical="true"
+        android:textColor="@color/text_color"
+        android:textSize="25dp"
         android:layout_centerHorizontal="true" />
 
     <Button
@@ -34,15 +37,23 @@
         android:layout_height="wrap_content"
         android:onClick="openKalkulator"
         android:text="rozkład kosztów"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/text_color"
+        android:textSize="25dp"
+        android:background="@drawable/button_appearance_1"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/my_history_button"
          />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:layout_below="@+id/distribuction_of_costs_button"
         android:text="lista zakupów"
+        android:textColor="@color/text_color"
+        android:textSize="25dp"
         android:layout_centerHorizontal="true"
+        android:background="@drawable/button_appearance_1"
         android:layout_alignLeft="@+id/distribuction_of_costs_button"
         android:layout_alignRight="@+id/distribuction_of_costs_button"
         android:id="@+id/shopping_list_button"/>
@@ -54,7 +65,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:textColor="@color/text_color"
+        android:textSize="25dp"
+        android:layout_marginBottom="5dp"
         android:layout_centerHorizontal="true"
+        android:background="@drawable/button_appearance_1"
         android:onClick="closeProgram"
         android:text="Wyjdź" />
 
