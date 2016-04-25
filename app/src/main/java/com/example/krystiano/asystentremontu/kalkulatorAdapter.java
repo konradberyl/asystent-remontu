@@ -1,59 +1,74 @@
 package com.example.krystiano.asystentremontu;
 
-import android.app.Activity;
+
 import android.content.Context;
-import android.text.InputType;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
-public class kalkulatorAdapter extends ArrayAdapter<kalkulatorRowBean> {
+import java.util.List;
 
+// * Created by Krystiano on 2016-04-23.
+public class kalkulatorAdapter extends RecyclerView.Adapter<kalkulatorAdapter.ArticlesVH> {
     Context context;
-    int layoutResourceId;
-    kalkulatorRowBean data[] = null;
+    List<Articles> dataArray;
 
-    public kalkulatorAdapter(Context context, int layoutResourceId, kalkulatorRowBean[] data) {
-        super(context, layoutResourceId, data);
-        this.layoutResourceId = layoutResourceId;
+    OnItemClickListener clickListener;
+
+    public kalkulatorAdapter(Context context, List<Articles> dataArray) {
         this.context = context;
-        this.data = data;
+        this.dataArray = dataArray;
 
     }
+
+
     @Override
+    public ArticlesVH onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.content_kalkulator, parent, false);
+        ArticlesVH viewHolder = new ArticlesVH(view);
+        return viewHolder;
+    }
 
-    public View getView(int position, View convertView, ViewGroup parent) {
-        View row = convertView;
-        RowBeanHolder holder = null;
-        if (row == null)
-        {
-            LayoutInflater inflater = ((Activity) context).getLayoutInflater();
-            row = inflater.inflate(layoutResourceId, parent, false);
-            holder = new RowBeanHolder();
-            holder.button = (Button) row.findViewById(R.id.add_button);
-            holder.textView = (TextView) row.findViewById(R.id.name_of_service);
-            holder.editText=(EditText)row.findViewById(R.id.type_quantity_edittext);
-            holder.editText.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
-            row.setTag(holder);
-            }
-        else {
-            holder = (RowBeanHolder) row.getTag();
-            }
-        kalkulatorRowBean object = data[position];
-        holder.textView.setText(object.usluga);
+    @Override
+    public void onBindViewHolder(ArticlesVH holder, int position) {
 
-        return row;
+        holder.titleTextView.setText(dataArray.get(position).article);
+        holder.editionTextView.setText(dataArray.get(position).price);
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return dataArray.size();
+    }
+
+    class ArticlesVH extends RecyclerView.ViewHolder implements View.OnClickListener {
+        TextView titleTextView;
+        TextView editionTextView;
+
+        public ArticlesVH(View itemView) {
+            super(itemView);
+
+            titleTextView = (TextView) itemView.findViewById(R.id.service);
+            editionTextView = (TextView) itemView.findViewById(R.id.pricelist);
+
+            itemView.setOnClickListener(this);
         }
-    static class RowBeanHolder
 
-
-    {
-        Button button;
-        TextView textView;
-        EditText editText;
+        @Override
+        public void onClick(View v) {
+            clickListener.onItemClick(v, getAdapterPosition());
         }
+    }
+
+    public interface OnItemClickListener {
+        public void onItemClick(View view, int position);
+    }
+
+    public void SetOnItemClickListener(final OnItemClickListener itemClickListener) {
+        this.clickListener = itemClickListener;
+    }
+
 }
