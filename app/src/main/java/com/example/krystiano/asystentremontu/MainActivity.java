@@ -2,17 +2,20 @@ package com.example.krystiano.asystentremontu;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import com.example.krystiano.asystentremontu.myhistory.MyHistoryMainClass;
+import com.google.android.gms.appindexing.Action;
+import com.google.android.gms.appindexing.AppIndex;
+import com.google.android.gms.common.api.GoogleApiClient;
 import com.raizlabs.android.dbflow.config.FlowManager;
 
 
 public class MainActivity extends Activity {
     Button myHistoryButton;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,13 +33,15 @@ public class MainActivity extends Activity {
 
     }
 
-    public void closeProgram(View view){
+    public void closeProgram(View view) {
         System.exit(0);
     }
 
     public void openKalkulator(View view) {
-        Intent intent=new Intent(this,kalkulator.class);
+        Intent intent = new Intent(this, kalkulator.class);
         startActivity(intent);
 
     }
+
+
 }
