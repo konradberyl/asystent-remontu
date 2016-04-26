@@ -1,7 +1,7 @@
 package com.example.krystiano.asystentremontu.myhistory.newelement;
 
 
-import com.example.krystiano.asystentremontu.AssistantUserConfig;
+import com.example.krystiano.asystentremontu.database.AssistantUserConfig;
 
 /**
  * Created by Beryl

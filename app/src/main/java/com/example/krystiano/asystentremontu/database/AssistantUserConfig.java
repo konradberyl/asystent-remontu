@@ -1,9 +1,8 @@
-package com.example.krystiano.asystentremontu;
+package com.example.krystiano.asystentremontu.database;
 
 /**
  * Created by Beryl
  * on 19.03.2016
- * All rights reserved
  */
 public class AssistantUserConfig {
     public String comment;

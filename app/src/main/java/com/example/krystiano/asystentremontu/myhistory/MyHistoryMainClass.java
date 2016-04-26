@@ -1,21 +1,16 @@
 package com.example.krystiano.asystentremontu.myhistory;
 
-import android.app.Activity;
-import android.opengl.Visibility;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.Button;
 import android.widget.FrameLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.krystiano.asystentremontu.AssistantUserConfig;
+
 import com.example.krystiano.asystentremontu.R;
-import com.example.krystiano.asystentremontu.database.DbManager;
-import com.example.krystiano.asystentremontu.database.MyHistoryDatabase;
+import com.example.krystiano.asystentremontu.database.AssistantUserConfig;
 import com.example.krystiano.asystentremontu.myhistory.actual_history.ActualHistoryFragment;
 import com.example.krystiano.asystentremontu.myhistory.newelement.CommunicationWithDatabase;
 import com.example.krystiano.asystentremontu.myhistory.newelement.NewElementFragment;

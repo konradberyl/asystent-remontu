@@ -8,7 +8,6 @@ import com.raizlabs.android.dbflow.structure.BaseModel;
 /**
  * Created by Beryl
  * on 19.03.2016
- * All rights reserved
  */
 @Table(name = AppDatabase.DATABASE_NAME,database = AppDatabase.class)
 public class MyHistoryDatabase extends BaseModel {

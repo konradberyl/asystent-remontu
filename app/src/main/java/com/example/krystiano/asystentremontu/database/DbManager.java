@@ -1,6 +1,5 @@
 package com.example.krystiano.asystentremontu.database;
 
-import com.example.krystiano.asystentremontu.AssistantUserConfig;
 import com.raizlabs.android.dbflow.sql.language.Delete;
 import com.raizlabs.android.dbflow.sql.language.Select;
 
@@ -10,7 +9,6 @@ import java.util.List;
 /**
  * Created by Beryl
  * on 19.03.2016
- * All rights reserved
  */
 public class DbManager {
 

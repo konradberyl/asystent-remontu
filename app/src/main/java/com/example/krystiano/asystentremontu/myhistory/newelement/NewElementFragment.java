@@ -20,9 +20,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.krystiano.asystentremontu.AssistantUserConfig;
-import com.example.krystiano.asystentremontu.R;
 
+import com.example.krystiano.asystentremontu.R;
+import com.example.krystiano.asystentremontu.database.AssistantUserConfig;
 import com.squareup.picasso.Picasso;
 
 import java.io.File;
@@ -30,7 +30,6 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 /**
  * Created by Beryl
  * on 19.03.2016
@@ -60,7 +59,7 @@ public class NewElementFragment extends Fragment {
         actualData = (TextView) view.findViewById(R.id.actual_date_textview);
         String date = DateFormat.getDateTimeInstance().format(new Date());
         actualData.setText(date);
-        typeDescription = (EditText) view.findViewById(R.id.type_description_edittext);
+        typeDescription = (EditText) view.findViewById(R.id .type_description_edittext);
         typePrice = (EditText) view.findViewById(R.id.price_edittext);
         addNewElement = (Button) view.findViewById(R.id.add_new_element_button);
 
@@ -80,8 +79,8 @@ public class NewElementFragment extends Fragment {
                 }
 
                 else {
-                     AssistantUserConfig assistantUserConfig = new AssistantUserConfig(typeDescription.getText().toString(), imagePath, actualData.getText().toString(), typePrice.getText().toString());
-                     onNewElementAdded.onAdded(assistantUserConfig);
+                    AssistantUserConfig assistantUserConfig = new AssistantUserConfig(typeDescription.getText().toString(), imagePath, actualData.getText().toString(), typePrice.getText().toString());
+                    onNewElementAdded.onAdded(assistantUserConfig);
                     Toast.makeText(getContext(), "dodano nowy element", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -99,8 +98,8 @@ public class NewElementFragment extends Fragment {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
             File imgFile = new File(imagePath);
             Picasso.with(getContext()).load(imgFile).resize(600,800).centerInside().into(placeToInsertPhoto);
-          //removeImage(getLastImageId());
-           // refleshGalleryPictures();
+            //removeImage(getLastImageId());
+            // refleshGalleryPictures();
         } else {
             Toast.makeText(getContext(), "nie zaakceptowano", Toast.LENGTH_SHORT).show();
         }

@@ -34,7 +34,7 @@
                     android:layout_marginRight="10dp"
                     android:layout_centerHorizontal="true"
                     android:background="@color/white_transparent"
-                     />
+                    />
 
             </RelativeLayout>
 
@@ -109,7 +109,7 @@
                     android:layout_toRightOf="@id/description_textview"
                     android:background="@color/white_transparent"
                     android:gravity="center"
-                    android:hint=" miejsce na komentarz"
+                    android:hint=" umieść swój komentarz"
                     android:textColor="@color/black" />
 
             </RelativeLayout>
@@ -142,7 +142,7 @@
                     android:hint="cena"
                     android:gravity="center"
                     android:singleLine="true"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
                     android:textColor="@color/black" />
 
                 <Button

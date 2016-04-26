@@ -17,8 +17,8 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import com.example.krystiano.asystentremontu.AssistantUserConfig;
 import com.example.krystiano.asystentremontu.R;
+import com.example.krystiano.asystentremontu.database.AssistantUserConfig;
 import com.example.krystiano.asystentremontu.myhistory.MyHistoryMainClass;
 
 import java.util.List;

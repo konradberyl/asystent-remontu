@@ -3,7 +3,7 @@ package com.example.krystiano.asystentremontu.myhistory.newelement;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 
-import com.example.krystiano.asystentremontu.AssistantUserConfig;
+import com.example.krystiano.asystentremontu.database.AssistantUserConfig;
 import com.example.krystiano.asystentremontu.database.DbManager;
 import com.example.krystiano.asystentremontu.database.MyHistoryDatabase;
 
