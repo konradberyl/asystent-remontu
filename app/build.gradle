@@ -9,7 +9,7 @@ android {
     defaultConfig {
         applicationId "com.example.krystiano.asystentremontu"
         minSdkVersion 16
-        targetSdkVersion 23
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
     }
@@ -36,12 +36,5 @@ dependencies {
 
     // sql-cipher database encyrption (optional)
     compile "com.github.Raizlabs.DBFlow:dbflow-sqlcipher:${dbflow_version}"
-<<<<<<< Updated upstream
-    //compile "com.github.Raizlabs.DBFlow:dbflow-kotlinextensions:${dbflow_version}"
-=======
 
-    // kotlin extensions
-   // compile "com.github.Raizlabs.DBFlow:dbflow-kotlinextensions:${dbflow_version}"
-
->>>>>>> Stashed changes
 }

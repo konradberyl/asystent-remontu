@@ -20,8 +20,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.krystiano.asystentremontu.AssistantUserConfig;
 import com.example.krystiano.asystentremontu.R;
-import com.example.krystiano.asystentremontu.database.AssistantUserConfig;
+
 import com.squareup.picasso.Picasso;
 
 import java.io.File;
@@ -97,9 +98,9 @@ public class NewElementFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
             File imgFile = new File(imagePath);
-            Picasso.with(getContext()).load(imgFile).into(placeToInsertPhoto);
-            removeImage(getLastImageId());
-            refleshGalleryPictures();
+            Picasso.with(getContext()).load(imgFile).resize(600,800).centerInside().into(placeToInsertPhoto);
+          //removeImage(getLastImageId());
+           // refleshGalleryPictures();
         } else {
             Toast.makeText(getContext(), "nie zaakceptowano", Toast.LENGTH_SHORT).show();
         }

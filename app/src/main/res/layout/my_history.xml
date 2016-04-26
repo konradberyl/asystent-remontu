@@ -4,6 +4,12 @@
     android:layout_height="match_parent"
     android:background="@drawable/remont"
     android:orientation="vertical">
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:id="@+id/fragment_container"
+        android:layout_height="wrap_content">
+
+    </FrameLayout>
 
     <Button
         android:id="@+id/actual_history_button"
@@ -31,19 +37,6 @@
         android:layout_marginTop="5dp"
         android:textSize="25dp" />
 
-    <TextView
-        android:id="@+id/text_to_show"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="25dp" />
 
-    <EditText
-        android:id="@+id/text_to_writesomething"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/text_to_show"
-        android:hint="heheszki"
-        android:singleLine="true"
-        android:textSize="25dp" />
 
 </RelativeLayout>
