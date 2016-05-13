@@ -1,10 +1,12 @@
 package com.example.krystiano.asystentremontu.myhistory.actual_history;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.support.design.widget.Snackbar;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,7 +22,8 @@ import android.widget.Toast;
 import com.example.krystiano.asystentremontu.R;
 import com.example.krystiano.asystentremontu.database.AssistantUserConfig;
 import com.example.krystiano.asystentremontu.myhistory.MyHistoryMainClass;
-import com.example.krystiano.asystentremontu.myhistory.newelement.OnNewElementAdded;
+import com.example.krystiano.asystentremontu.myhistory.newelement.ConfigListSingleton;
+import com.example.krystiano.asystentremontu.myhistory.newelement.NewElementActivity;
 import com.squareup.picasso.Picasso;
 
 import java.io.File;
@@ -40,8 +43,8 @@ public class AdapterForRecyclerView extends RecyclerView.Adapter<AdapterForRecyc
     private static Context context;
     private File file;
     private Picasso.Builder builder;
-    private static MyHistoryMainClass.DeleteListener deleteListener;
-    private static ActualHistoryFragment.RefleshRecyclerViewListener refleshRecyclerViewListener;
+    public static final String EDIT_ITEM ="editItem";
+    private static ActualHistoryActivity.RefleshRecyclerViewListener refleshRecyclerViewListener;
 
 
     public AdapterForRecyclerView(Context context) {
@@ -65,11 +68,11 @@ public class AdapterForRecyclerView extends RecyclerView.Adapter<AdapterForRecyc
 
     }
 
-    public void setConfig(List<AssistantUserConfig> config, MyHistoryMainClass.DeleteListener deleteListener, ActualHistoryFragment.RefleshRecyclerViewListener refleshRecyclerViewListener) {
+    public void setConfig(List<AssistantUserConfig> config, ActualHistoryActivity.RefleshRecyclerViewListener refleshRecyclerViewListener) {
         configToRecyclerView = config;
-        this.deleteListener = deleteListener;
         this.refleshRecyclerViewListener = refleshRecyclerViewListener;
     }
+
 
 
     @Override
@@ -80,6 +83,7 @@ public class AdapterForRecyclerView extends RecyclerView.Adapter<AdapterForRecyc
         Log.i("AdapterForRecyclerView ", " positions in onBindViewHolder: " + position);
         file = new File(configToRecyclerView.get(position).pathToImg);
         builder.build().load(file).fit().into(holder.placeToInsertPhotoInHistory);
+
 
 
     }
@@ -115,20 +119,17 @@ public class AdapterForRecyclerView extends RecyclerView.Adapter<AdapterForRecyc
             String getTag = placeToInsertPhotoInHistory.getTag().toString();
             if (getTag == placeToInsertPhotoInHistory.getTag().toString()) {
 
-                //   Toast.makeText(v.getContext(), "ITEM(ImageView) PRESSED = " + String.valueOf(getAdapterPosition()), Toast.LENGTH_SHORT).show();
                 if (relativeToPutButtons.findViewById(R.id.delete_button_in_history) != null) {
-
-                    //  Toast.makeText(v.getContext(), "znaleziono widoki ", Toast.LENGTH_SHORT).show();
-//                    ((RelativeLayout) relativeToPutButtons.findViewById(R.id.relative_to_put_programmatically_items)).removeView(delete);
-//                    ((RelativeLayout) relativeToPutButtons.findViewById(R.id.relative_to_put_programmatically_items)).removeView(send);
                     ((RelativeLayout) relativeToPutButtons.findViewById(R.id.relative_to_put_programmatically_items)).removeAllViews();
                 } else {
                     createAddiditonalOptions(relativeToPutButtons, getAdapterPosition());
                 }
             } else if (v.getId() == relativeToPutButtons.getId()) {
-                Toast.makeText(v.getContext(), "pressed on Parent ", Toast.LENGTH_SHORT).show();
+                return;
+                // Toast.makeText(v.getContext(), "pressed on Parent ", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(v.getContext(), "please click on image ", Toast.LENGTH_SHORT).show();
+                return;
+                // Toast.makeText(v.getContext(), "please click on image ", Toast.LENGTH_SHORT).show();
             }
 
 
@@ -157,10 +158,7 @@ public class AdapterForRecyclerView extends RecyclerView.Adapter<AdapterForRecyc
                         .setMessage("usunąć ten wiersz?")
                         .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
-                                deleteListener.onDelete(position);
                                 refleshRecyclerViewListener.onReflesh(position);
-
-                                Toast.makeText(context, "usunięto element:  " + position, Toast.LENGTH_SHORT).show();
                             }
                         })
                         .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
@@ -177,7 +175,10 @@ public class AdapterForRecyclerView extends RecyclerView.Adapter<AdapterForRecyc
             @Override
             public void onClick(View v) {
                 Log.i(context.getClass().getSimpleName(), "edit clicked");
-
+                Intent editElement = new Intent(context,NewElementActivity.class);
+                editElement.putExtra(EDIT_ITEM,position);
+                context.startActivity(editElement);
+                ((Activity)context).finish();
 
             }
         });

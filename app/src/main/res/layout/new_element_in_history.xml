@@ -10,8 +10,7 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_weight="0.30"
-        android:background="@color/white_transparent">
+        android:layout_weight="0.30">
 
         <RelativeLayout
             android:layout_width="fill_parent"
@@ -28,13 +27,12 @@
                     android:id="@+id/place_to_photo_imageview"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:layout_marginTop="10dp"
+                    android:layout_centerHorizontal="true"
                     android:layout_marginBottom="10dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:layout_centerHorizontal="true"
-                    android:background="@color/white_transparent"
-                    />
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white_transparent" />
 
             </RelativeLayout>
 
@@ -61,8 +59,7 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_weight="0.70"
-        android:background="@color/white_transparent">
+        android:layout_weight="0.70">
 
         <RelativeLayout
             android:layout_width="fill_parent"
@@ -139,10 +136,10 @@
                     android:layout_marginLeft="5dp"
                     android:layout_toRightOf="@+id/price_textview"
                     android:background="@color/white_transparent"
-                    android:hint="cena"
                     android:gravity="center"
-                    android:singleLine="true"
+                    android:hint="cena"
                     android:inputType="numberDecimal"
+                    android:singleLine="true"
                     android:textColor="@color/black" />
 
                 <Button

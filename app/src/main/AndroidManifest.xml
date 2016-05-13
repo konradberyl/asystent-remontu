@@ -3,7 +3,7 @@
     package="com.example.krystiano.asystentremontu">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name=".DBFlowApplication"
@@ -28,7 +28,8 @@
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,15 +37,25 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".cennikUslug"
-            android:label="@string/title_activity_cennik_uslug"
+            android:name=".myhistory.actual_history.ActualHistoryActivity"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+        android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+
+        <activity
+            android:name=".myhistory.newelement.NewElementActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+             />
+        <activity
+            android:name=".shopping_list.ShoppingListMainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+             />
         <activity
             android:name=".kalkulator"
             android:label="@string/title_activity_kalkulator"
-            android:windowSoftInputMode="adjustPan"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".myhistory.MyHistoryMainClass"
             android:screenOrientation="portrait"
@@ -55,7 +66,7 @@
         -->
 
 
-        <activity android:name=".Fragment1" > </activity>
+        <activity android:name=".Fragment1"></activity>
         <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
              App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
         <meta-data

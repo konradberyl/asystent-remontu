@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginRight="15dp"
+            android:layout_toLeftOf="@+id/relative_with_data"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/you_bought_tv_simple_text"
+                android:layout_centerHorizontal="true"
+                android:text="kupiłeś: "
+                android:textSize="20dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/you_bought_tv_simple_text"
+                android:textSize="15dp"
+                android:id="@+id/tv_to_place_bought_item_in_history"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:text="kupiony przedmiot"/>
+
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_alignParentTop="true"
+            android:id="@+id/relative_with_data"
+            android:layout_toLeftOf="@+id/relative_with_bin"
+            android:layout_marginRight="15dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/date_of_bought_simple_tv"
+                android:text="dnia:"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:layout_marginTop="5dp"
+                android:id="@+id/tv_to_place_date_of_purchase_in_history"
+                android:layout_below="@+id/date_of_bought_simple_tv"
+                android:text="data kupna"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_alignParentRight="true"
+            android:id="@+id/relative_with_bin"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/bin"
+                android:id="@+id/place_to_put_bin"
+                android:layout_height="50dp" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

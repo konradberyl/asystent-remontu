@@ -1,5 +1,7 @@
 package com.example.krystiano.asystentremontu.database;
 
+import java.io.Serializable;
+
 /**
  * Created by Beryl
  * on 19.03.2016

@@ -4,12 +4,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/remont"
     android:orientation="vertical">
-    <FrameLayout
-        android:layout_width="wrap_content"
-        android:id="@+id/fragment_container"
-        android:layout_height="wrap_content">
-
-    </FrameLayout>
 
     <Button
         android:id="@+id/actual_history_button"
