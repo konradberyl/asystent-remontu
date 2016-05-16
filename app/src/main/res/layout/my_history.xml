@@ -11,10 +11,10 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerInParent="true"
-        android:text="aktualna historia"
+        android:text="AKTUALNA HISTORIA"
         android:textColor="@color/text_color"
         android:textSize="25dp"
-        android:background="@drawable/button_appearance_2"
+        android:background="@drawable/button_appearance_1"
         />
 
     <Button
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/actual_history_button"
         android:layout_centerHorizontal="true"
-        android:text="nowy element"
+        android:text="NOWY ELEMENT"
         android:layout_alignLeft="@+id/actual_history_button"
         android:layout_alignRight="@+id/actual_history_button"
         android:textColor="@color/text_color"

@@ -2,6 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/remont"
+
     android:orientation="vertical">
 
     <RelativeLayout
@@ -13,19 +15,23 @@
         <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:layout_toLeftOf="@+id/button_to_add_to_list"
             android:gravity="center"
             android:singleLine="true"
             android:id="@+id/ed_to_write_product_to_buy"
+            android:layout_marginTop="8dp"
             android:hint="nazwa produktu" />
 
         <Button
             android:id="@+id/button_to_add_to_list"
             android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:background="@drawable/button_appearance_2"
+            android:layout_height="50dp"
             android:layout_alignParentRight="true"
             android:layout_marginRight="5dp"
+            android:textColor="@color/white"
+            android:textSize="20dp"
             android:text="dodaj" />
 
     </RelativeLayout>
@@ -49,27 +55,33 @@
         </ListView>
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="dodaj zaznaczone do historii"
+            android:layout_width="190dp"
+            android:layout_height="50dp"
+            android:text="dodaj do historii"
             android:id="@+id/button_to_put_items_to_history"
             android:layout_marginBottom="5dp"
-            android:layout_marginRight="5dp"
             android:layout_marginLeft="5dp"
+            android:textSize="20dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
-            android:layout_toLeftOf="@+id/button_delete_checked_items"
+            android:textColor="@color/white"
+            android:background="@drawable/button_appearance_2"
             android:layout_centerHorizontal="true"
             />
         <Button
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="5dp"
+            android:background="@drawable/button_appearance_2"
             android:layout_marginRight="5dp"
+            android:textSize="20dp"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/white"
+            android:layout_toRightOf="@+id/button_to_put_items_to_history"
             android:id="@+id/button_delete_checked_items"
             android:layout_alignParentRight="true"
-            android:text="usuń zaznaczone"/>
+            android:text="usuń"/>
 
     </RelativeLayout>
 

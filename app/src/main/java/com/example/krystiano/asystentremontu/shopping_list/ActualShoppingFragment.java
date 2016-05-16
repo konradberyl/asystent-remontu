@@ -155,10 +155,12 @@ public class ActualShoppingFragment extends DbConfigHelper {
 
             product.setText(ActualShoppingListSingleton.getInstance().getConfig().get(position).product);
             if (checkbox.isChecked()) {
+                product.setTextColor(getResources().getColor(R.color.gray_when_crossed_out));
                 product.setTypeface(Typeface.defaultFromStyle(Typeface.ITALIC));
                 product.setPaintFlags(product.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
 
             } else {
+                product.setTextColor(getResources().getColor(R.color.black));
                 product.setPaintFlags(product.getPaintFlags() & ~Paint.STRIKE_THRU_TEXT_FLAG);
                 product.setTypeface(Typeface.DEFAULT);
             }
@@ -170,12 +172,14 @@ public class ActualShoppingFragment extends DbConfigHelper {
                     if (checkbox.isChecked()) {
                         ActualShoppingListSingleton.getInstance().getConfig().get(position).isChecked = true;
                         Log.d(TAG, "checkbox checked,  ifChecked =" + ActualShoppingListSingleton.getInstance().getConfig().get(position).isChecked);
+                        product.setTextColor(getResources().getColor(R.color.gray_when_crossed_out));
                         product.setTypeface(Typeface.defaultFromStyle(Typeface.ITALIC));
                         product.setPaintFlags(product.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
                         refleshTodayList();
                     } else {
 
                         Log.d(TAG, "checkbox unchecked,  ifChecked =" + ActualShoppingListSingleton.getInstance().getConfig().get(position).isChecked);
+                        product.setTextColor(getResources().getColor(R.color.black));
                         product.setPaintFlags(product.getPaintFlags() & ~Paint.STRIKE_THRU_TEXT_FLAG);
                         product.setTypeface(Typeface.DEFAULT);
                         ActualShoppingListSingleton.getInstance().getConfig().get(position).isChecked = false;

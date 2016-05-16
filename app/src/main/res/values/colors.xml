@@ -9,5 +9,6 @@
     <color name="white_transparent">#80FFFFFF</color>
     <color name="blue">#4d90fe</color>
     <color name="black">#000000</color>
+    <color name="gray_when_crossed_out">#616161</color>
 
 </resources>

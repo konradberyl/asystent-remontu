@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/remont"
     android:weightSum="1"
     >
     <LinearLayout
@@ -13,9 +13,9 @@
         android:id="@+id/linear_with_listview"
         >
         <RelativeLayout
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:gravity="center"
             >
             <Button
                 android:layout_width="wrap_content"
@@ -23,23 +23,30 @@
                 android:id="@+id/add_button"
                 android:text="DODAJ"
                 android:onClick="addNewRow"
-                android:layout_toRightOf="@+id/price_edittext"
-                android:layout_marginLeft="20dp"
                 android:inputType="textNoSuggestions"
                 android:textIsSelectable="false"
+                android:background="@drawable/button_appearance_2"
+                android:layout_marginRight="5dp"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:layout_marginTop="5dp"
+
                 />
 
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:singleLine="true"
-                android:text=""
-                android:textSize="15dp"
-                android:layout_marginRight="20dp"
+                android:textSize="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:layout_toLeftOf="@+id/price_edittext"
                 android:layout_centerInParent="true"
                 android:id="@+id/name_of_service"
-                android:hint="Wpisz artykuł"
+                android:hint="artykuł"
+                android:textColorHint="@color/white"
+                android:layout_marginTop="5dp"
                 />
 
             <EditText
@@ -49,10 +56,13 @@
                 android:singleLine="true"
                 android:hint="Wpisz cene[zł]"
                 android:textIsSelectable="false"
-                android:textSize="15sp"
+                android:textSize="20dp"
                 android:clickable="true"
-                android:layout_centerInParent="true"
-                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_toLeftOf="@+id/add_button"
+                android:layout_marginRight="5dp"
+                android:textColorHint="@color/white"
                 android:inputType="numberSigned|numberDecimal" />
 
         </RelativeLayout>
@@ -89,22 +99,36 @@
         <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent">
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:id="@+id/sum"
-                android:text="Podsumuj"
 
-                />
-            <Button
+            <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Usun wszystko"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="40dp"
-                android:id="@+id/delete_all"
-                />
+                android:gravity="center"
+                android:layout_height="wrap_content">
+                <Button
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:background="@drawable/button_appearance_2"
+                    android:layout_marginRight="10dp"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:id="@+id/sum"
+                    android:text="Podsumuj"
+
+                    />
+                <Button
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:text="Usun wszystko"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp"
+                    android:textSize="20dp"
+                    android:layout_toRightOf="@+id/sum"
+                    android:background="@drawable/button_appearance_2"
+                    android:textColor="@color/white"
+                    android:id="@+id/delete_all"
+                    />
+            </RelativeLayout>
         </RelativeLayout>
     </LinearLayout>
 

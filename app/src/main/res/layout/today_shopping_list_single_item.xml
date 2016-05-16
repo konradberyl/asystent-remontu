@@ -2,51 +2,57 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@drawable/window_appearance_1">
+
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_toLeftOf="@+id/relative_with_checkbox"
-            android:layout_marginRight="10dp"
-            android:layout_centerVertical="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
+            android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/relative_with_checkbox"
-            android:layout_height="wrap_content">
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/relative_with_checkbox">
+
             <TextView
+                android:id="@+id/place_to_show_product_name_in_list"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
                 android:gravity="center"
                 android:text="zakupiony przedmiot"
-                android:id="@+id/place_to_show_product_name_in_list"
-                android:textSize="20dp"/>
+                android:textColor="@color/black"
+                android:textSize="25dp" />
         </RelativeLayout>
+
         <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
             android:id="@+id/relative_with_checkbox"
-            android:layout_height="wrap_content">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true">
+
             <TextView
                 android:id="@+id/simple_text_bought"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="zakupiono?"
+                android:textColor="@color/black"
                 android:textSize="20dp" />
 
             <CheckBox
+                android:id="@+id/shoping_list_checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="5dp"
-                android:id="@+id/shoping_list_checkbox"
                 android:layout_below="@+id/simple_text_bought"
-                />
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp" />
         </RelativeLayout>
-
 
 
     </RelativeLayout>

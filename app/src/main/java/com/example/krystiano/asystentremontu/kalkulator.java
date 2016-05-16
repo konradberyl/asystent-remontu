@@ -9,6 +9,7 @@ import android.os.Bundle;
 
 import android.support.design.widget.Snackbar;
 
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
@@ -49,6 +50,10 @@ public class kalkulator extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.listview_items);
+        ActionBar actionBar = getSupportActionBar();
+        if(actionBar!=null){
+            actionBar.hide();
+        }
         SugarContext.init(this);
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);

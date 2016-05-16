@@ -32,7 +32,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="10dp"
-                    android:background="@color/white_transparent" />
+                    android:background="@drawable/window_appearance_1" />
 
             </RelativeLayout>
 
@@ -45,8 +45,11 @@
 
                 <Button
                     android:id="@+id/create_photo_button"
+                    android:background="@drawable/button_appearance_1"
+                    android:textSize="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/text_color"
                     android:text="wykonaj zdjęcie"
 
                     />
@@ -104,7 +107,7 @@
                     android:layout_marginRight="5dp"
                     android:layout_marginTop="5dp"
                     android:layout_toRightOf="@id/description_textview"
-                    android:background="@color/white_transparent"
+                    android:background="@drawable/window_appearance_1"
                     android:gravity="center"
                     android:hint=" umieść swój komentarz"
                     android:textColor="@color/black" />
@@ -135,10 +138,10 @@
                     android:layout_marginBottom="10dp"
                     android:layout_marginLeft="5dp"
                     android:layout_toRightOf="@+id/price_textview"
-                    android:background="@color/white_transparent"
                     android:gravity="center"
                     android:hint="cena"
                     android:inputType="numberDecimal"
+                    android:background="@drawable/window_appearance_1"
                     android:singleLine="true"
                     android:textColor="@color/black" />
 
@@ -149,6 +152,9 @@
                     android:layout_below="@+id/price_edittext"
                     android:layout_centerHorizontal="true"
                     android:layout_marginBottom="5dp"
+                    android:textSize="20dp"
+                    android:background="@drawable/button_appearance_1"
+                    android:textColor="@color/text_color"
                     android:text="dodaj" />
             </RelativeLayout>
 

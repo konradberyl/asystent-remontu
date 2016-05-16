@@ -4,7 +4,8 @@
     android:layout_height="match_parent">
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+        android:background="@drawable/window_appearance_1"
+        android:layout_height="wrap_content">
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_alignParentTop="true"
@@ -18,6 +19,8 @@
                 android:id="@+id/you_bought_tv_simple_text"
                 android:layout_centerHorizontal="true"
                 android:text="kupiłeś: "
+                android:textColor="@color/black"
+
                 android:textSize="20dp"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -27,6 +30,7 @@
                 android:id="@+id/tv_to_place_bought_item_in_history"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="5dp"
+                android:textColor="@color/black"
                 android:text="kupiony przedmiot"/>
 
 
@@ -43,6 +47,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
+                android:textColor="@color/black"
                 android:layout_centerHorizontal="true"
                 android:id="@+id/date_of_bought_simple_tv"
                 android:text="dnia:"/>
@@ -51,6 +56,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="15dp"
                 android:layout_marginTop="5dp"
+                android:textColor="@color/black"
                 android:id="@+id/tv_to_place_date_of_purchase_in_history"
                 android:layout_below="@+id/date_of_bought_simple_tv"
                 android:text="data kupna"/>

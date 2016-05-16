@@ -5,16 +5,17 @@
         android:topRightRadius="0dp"
         android:bottomLeftRadius="0dp"
         android:bottomRightRadius="14dp"
+
         />
     <solid
         android:color="#804F4F4F"
         />
     <size
         android:width="270dp"
-        android:height="60dp"
+        android:height="50dp"
         />
     <stroke
         android:width="2dp"
         android:color="#FFFFFF"
         />
-</shape> 
+</shape>
