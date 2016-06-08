@@ -109,6 +109,8 @@
                     android:layout_toRightOf="@id/description_textview"
                     android:background="@drawable/window_appearance_1"
                     android:gravity="center"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext"
                     android:hint=" umieść swój komentarz"
                     android:textColor="@color/black" />
 

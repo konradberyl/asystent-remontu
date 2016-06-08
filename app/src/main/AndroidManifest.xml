@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.krystiano.asystentremontu">
+    package="com.example.apps.asystentremontu">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-        android:name=".DBFlowApplication"
+        android:name="com.example.apps.asystentremontu.DBFlowApplication"
         android:allowBackup="true"
         android:icon="@mipmap/new_launcher_icon"
         android:label="@string/app_name"
@@ -23,10 +23,10 @@
             android:value="true" />
         <meta-data
             android:name="DOMAIN_PACKAGE_NAME"
-            android:value="com.example.krystiano.asystentremontu" />
+            android:value="com.example.apps.asystentremontu" />
 
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.apps.asystentremontu.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
             >
@@ -37,28 +37,28 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".myhistory.actual_history.ActualHistoryActivity"
+            android:name="com.example.apps.asystentremontu.myhistory.actual_history.ActualHistoryActivity"
             android:screenOrientation="portrait"
         android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
 
         <activity
-            android:name=".myhistory.newelement.NewElementActivity"
+            android:name="com.example.apps.asystentremontu.myhistory.newelement.NewElementActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
              />
         <activity
-            android:name=".shopping_list.ShoppingListMainActivity"
+            android:name="com.example.apps.asystentremontu.shopping_list.ShoppingListMainActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
              />
         <activity
-            android:name=".kalkulator"
+            android:name=".calculator.CalculatorActivity"
             android:label="@string/title_activity_kalkulator"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name=".myhistory.MyHistoryMainClass"
+            android:name="com.example.apps.asystentremontu.myhistory.MyHistoryMainClass"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
 

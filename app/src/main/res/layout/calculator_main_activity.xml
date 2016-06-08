@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/remont"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:id="@+id/linear_with_listview"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/add_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/button_appearance_2"
+                android:inputType="textNoSuggestions"
+                android:onClick="addNewRow"
+                android:text="DODAJ"
+                android:textColor="@color/white"
+                android:textIsSelectable="false"
+                android:textSize="20dp"
+
+                />
+
+            <EditText
+                android:id="@+id/name_of_service"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_toLeftOf="@+id/price_edittext"
+                android:hint="artykuł"
+                android:textColor="@color/white"
+                android:singleLine="true"
+                android:imeOptions="actionNext"
+                android:textColorHint="@color/white"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/price_edittext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_toLeftOf="@+id/add_button"
+                android:textColor="@color/white"
+                android:hint="wpisz cenę[zł]"
+                android:imeOptions="actionDone"
+                android:inputType="numberSigned|numberDecimal"
+                android:singleLine="true"
+                android:textColorHint="@color/white"
+                android:textSize="20dp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:id="@+id/relative_with_edittext"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.72"
+
+        >
+
+        <RelativeLayout
+            android:id="@+id/podsumuj"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.18">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <RelativeLayout
+                android:id="@+id/relative_with_total_amount_and_delete_everything"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/button_to_summarize"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/button_appearance_2"
+                    android:text="Podsumuj"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+
+                    />
+
+                <Button
+                    android:id="@+id/delete_all"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_toRightOf="@+id/button_to_summarize"
+                    android:background="@drawable/button_appearance_2"
+                    android:text="Usun wszystko"
+                    android:textColor="@color/white"
+                    android:textSize="20dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/relative_with_total_amount_and_delete_everything"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/type_maximum_money_editext"
+                    android:textColorHint="@color/white"
+                    android:singleLine="true"
+                    android:textSize="20dp"
+                    android:textColor="@color/blue"
+                    android:inputType="numberDecimal"
+                    android:gravity="center"
+                    android:hint="wprowadź maksymalną kwotę" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

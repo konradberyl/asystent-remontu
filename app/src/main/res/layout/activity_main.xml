@@ -35,7 +35,7 @@
         android:id="@+id/distribuction_of_costs_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="openKalkulator"
+        android:onClick="openCalculatorActivity"
         android:text="ROZKŁAD KOSZTÓW"
         android:layout_marginTop="5dp"
         android:textColor="@color/text_color"
